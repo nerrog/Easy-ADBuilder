@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.trop = new MetroFramework.Controls.MetroTextBox();
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -49,13 +50,13 @@
             this.trop.CustomButton.Visible = false;
             this.trop.Lines = new string[] {
         "Trop"};
-            this.trop.Location = new System.Drawing.Point(23, 63);
+            this.trop.Location = new System.Drawing.Point(22, 63);
             this.trop.MaxLength = 32767;
             this.trop.Multiline = true;
             this.trop.Name = "trop";
             this.trop.PasswordChar = '\0';
             this.trop.ReadOnly = true;
-            this.trop.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.trop.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.trop.SelectedText = "";
             this.trop.SelectionLength = 0;
             this.trop.SelectionStart = 0;
@@ -96,7 +97,9 @@
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroCheckBox1);
             this.Controls.Add(this.trop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
+            this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Easy ADBuilder";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);

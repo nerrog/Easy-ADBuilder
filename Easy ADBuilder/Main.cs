@@ -23,7 +23,35 @@ namespace Easy_ADBuilder
         {
             InitializeComponent();
         }
+        private void  build()
+        {
+            //adb環境構築メソッド
 
+            string sourcePath = $@"{(System.Environment.CurrentDirectory)}\platform-tools";
+            string destinationPath = @"C:\adb";
+            //ディレクトリごとコピーする方法がﾜｶﾗﾝ
+            File.Copy($@"{sourcePath}\adb.exe", $@"{destinationPath}\adb.exe", true);
+            File.Copy($@"{sourcePath}\AdbWinApi.dll", $@"{destinationPath}\AdbWinApi.dll", true);
+            File.Copy($@"{sourcePath}\AdbWinUsbApi.dll", $@"{destinationPath}\AdbWinUsbApi.dll", true);
+            File.Copy($@"{sourcePath}\NOTICE.txt", $@"{destinationPath}\NOTICE.txt", true);
+            //環境変数pathへ追加
+            System.Diagnostics.Process pro = new System.Diagnostics.Process();
+
+            pro.StartInfo.FileName = "setx";            
+            pro.StartInfo.Arguments = "/M path \" % path %;C:\\adb\"";               
+            pro.StartInfo.CreateNoWindow = true;            
+            pro.StartInfo.UseShellExecute = false;          
+            pro.StartInfo.RedirectStandardOutput = true;   
+
+            pro.Start();
+
+            string output = pro.StandardOutput.ReadToEnd();
+            output.Replace("\r\r\n", "\n"); // 改行コード変換
+
+            MessageBox.Show($"{output}\r\nadb環境の構築が完了しました！");
+            thread.Abort();
+            thread.Join();
+        }
         private void ChkBox()
         {
             //チェックボックス監視
@@ -44,15 +72,16 @@ namespace Easy_ADBuilder
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            Task task = Task.Run(() => {
-                ChkBox();
-            });
+            var textFileContent = Properties.Resources.readme;
+            trop.Text = textFileContent;
+            thread = new Thread(new ThreadStart(ChkBox));
+            thread.Start();
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            thread.Abort();
+            thread.Join();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -83,10 +112,9 @@ namespace Easy_ADBuilder
             {
                 Directory.CreateDirectory(path);
             }
-            //コピー処理
-            string sourcePath = $@"{(System.Environment.CurrentDirectory)}\platform-tools";
-            string destinationPath = @"C:\adb";
 
+            thread = new Thread(new ThreadStart(build));
+            thread.Start();
         }
     }
 }
