@@ -13,6 +13,7 @@ adbコマンドを使うために必要なファイルをダウンロードし�
 必要条件
 
 *Windows10(MacOSやLinuxOSには対応しておりません)
+
 *.NET Framework 4.7.2
  
 # Installation
