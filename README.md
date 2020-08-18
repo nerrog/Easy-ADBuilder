@@ -1,5 +1,4 @@
 # Easy-ADBuilder
-[![Build Status](https://travis-ci.com/nerrog/Easy-ADBuilder.svg?branch=master)](https://travis-ci.com/nerrog/Easy-ADBuilder)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 # Features
