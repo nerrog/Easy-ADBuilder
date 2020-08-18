@@ -1,4 +1,0 @@
-language: csharp
-solution: Easy ADBuilder.sln
-install:
-  - nuget Easy ADBuilder.sln
