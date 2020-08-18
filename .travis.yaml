@@ -1,0 +1,5 @@
+language: csharp
+solution: Easy ADBuilder.sln
+install:
+  - Sudo dosomething
+  - nuget Easy ADBuilder.sln
