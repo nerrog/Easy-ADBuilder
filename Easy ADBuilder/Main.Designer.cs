@@ -33,6 +33,7 @@
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // trop
@@ -63,6 +64,7 @@
             this.trop.SelectionStart = 0;
             this.trop.ShortcutsEnabled = true;
             this.trop.Size = new System.Drawing.Size(770, 302);
+            this.trop.Style = MetroFramework.MetroColorStyle.Green;
             this.trop.TabIndex = 0;
             this.trop.Text = "Trop";
             this.trop.UseSelectable = true;
@@ -75,6 +77,7 @@
             this.metroCheckBox1.Location = new System.Drawing.Point(23, 380);
             this.metroCheckBox1.Name = "metroCheckBox1";
             this.metroCheckBox1.Size = new System.Drawing.Size(111, 15);
+            this.metroCheckBox1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroCheckBox1.TabIndex = 1;
             this.metroCheckBox1.Text = "利用規約に同意";
             this.metroCheckBox1.UseSelectable = true;
@@ -85,6 +88,7 @@
             this.metroButton1.Location = new System.Drawing.Point(439, 380);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(354, 47);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "ADB環境構築開始";
             this.metroButton1.UseSelectable = true;
@@ -101,11 +105,22 @@
             this.linkLabel1.Text = "by nerrog.net";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(328, 380);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(105, 47);
+            this.metroButton2.TabIndex = 4;
+            this.metroButton2.Text = "設定";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroCheckBox1);
@@ -127,6 +142,7 @@
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private MetroFramework.Controls.MetroButton metroButton2;
     }
 }
 
