@@ -1,5 +1,6 @@
 # Easy-ADBuilder
-
+[![Build Status](https://dev.azure.com/nerrog1002/Easy-ADBuilder/_apis/build/status/nerrog.Easy-ADBuilder?branchName=master)](https://dev.azure.com/nerrog1002/Easy-ADBuilder/_build/latest?definitionId=1&branchName=master)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 # Features
  
