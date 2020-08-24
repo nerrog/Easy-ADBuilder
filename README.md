@@ -2,6 +2,7 @@
 [![Build Status](https://dev.azure.com/nerrog1002/Easy-ADBuilder/_apis/build/status/nerrog.Easy-ADBuilder?branchName=master)](https://dev.azure.com/nerrog1002/Easy-ADBuilder/_build/latest?definitionId=1&branchName=master)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![Twitter Follow](https://img.shields.io/twitter/follow/nerrog_blog?style=social)](https://twitter.com/nerrog_blog)
+[![TwitterMoments](https://img.shields.io/badge/Twitter-Moments-blue)](https://twitter.com/i/events/1297879300213891073)
 # Features
  
 adbコマンドを使うために必要なファイルをダウンロードしたり環境変数が通したりが必要なく、ソフト上からワンクリックで環境を構築できます
