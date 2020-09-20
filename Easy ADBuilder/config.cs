@@ -44,5 +44,13 @@ namespace Easy_ADBuilder
             File.WriteAllText(conf, metroTextBox1.Text);
             this.Close();
         }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            var fs = new FolderSelect();
+            fs.Path = metroTextBox1.Text;
+            if (fs.ShowDialog() == DialogResult.OK)
+                metroTextBox1.Text = fs.Path;
+        }
     }
 }

@@ -31,6 +31,7 @@
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroTextBox1
@@ -39,7 +40,7 @@
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(222, 1);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(193, 1);
             this.metroTextBox1.CustomButton.Name = "";
             this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -58,7 +59,7 @@
             this.metroTextBox1.SelectionLength = 0;
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(244, 23);
+            this.metroTextBox1.Size = new System.Drawing.Size(215, 23);
             this.metroTextBox1.TabIndex = 0;
             this.metroTextBox1.Text = "C:\\adb";
             this.metroTextBox1.UseSelectable = true;
@@ -76,19 +77,30 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(217, 122);
+            this.metroButton1.Location = new System.Drawing.Point(310, 119);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(112, 29);
+            this.metroButton1.Size = new System.Drawing.Size(80, 29);
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "OK";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(310, 82);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(80, 31);
+            this.metroButton2.TabIndex = 3;
+            this.metroButton2.Text = "参照";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
             // config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 171);
+            this.ClientSize = new System.Drawing.Size(399, 171);
+            this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metroTextBox1);
@@ -105,5 +117,6 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton2;
     }
 }

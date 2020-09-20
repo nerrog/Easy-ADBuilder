@@ -94,6 +94,7 @@
     <Compile Include="config.Designer.cs">
       <DependentUpon>config.cs</DependentUpon>
     </Compile>
+    <Compile Include="FolderSelect.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

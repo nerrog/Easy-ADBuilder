@@ -81,6 +81,7 @@
             this.metroCheckBox1.TabIndex = 1;
             this.metroCheckBox1.Text = "利用規約に同意";
             this.metroCheckBox1.UseSelectable = true;
+            this.metroCheckBox1.CheckedChanged += new System.EventHandler(this.metroCheckBox1_CheckedChanged);
             // 
             // metroButton1
             // 

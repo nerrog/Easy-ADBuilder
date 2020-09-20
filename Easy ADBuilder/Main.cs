@@ -117,23 +117,6 @@ namespace Easy_ADBuilder
             thread.Abort();
             thread.Join();
         }
-        private void ChkBox()
-        {
-            //チェックボックス監視
-            while (true)
-            {
-                if (metroCheckBox1.Checked == true)
-                {
-                    //metroButton1.Enabled = true;
-                    this.Invoke((MethodInvoker)(() => metroButton1.Enabled = true));
-                }
-
-                if (metroCheckBox1.Checked == false)
-                {
-                    this.Invoke((MethodInvoker)(() => metroButton1.Enabled = false));
-                }
-            }
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -141,8 +124,6 @@ namespace Easy_ADBuilder
             thread.Start();
             var textFileContent = Properties.Resources.readme;
             trop.Text = textFileContent;
-            thread = new Thread(new ThreadStart(ChkBox));
-            thread.Start();
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -169,6 +150,13 @@ namespace Easy_ADBuilder
             {
                 tmp = @"C:\adb";
             }
+            //configが空だと例外が発生するのでここでチェック
+            if (tmp == "")
+            {
+                tmp = @"C:\adb";
+            }
+
+
             string path = tmp;
             if (Directory.Exists(path))
             {
@@ -206,6 +194,19 @@ namespace Easy_ADBuilder
         {
             config config_F = new config();
             config_F.Show();
+        }
+
+        private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (metroCheckBox1.Checked == true)
+            {
+                metroButton1.Enabled = true;
+            }
+
+            if (metroCheckBox1.Checked == false)
+            {
+                metroButton1.Enabled = false;
+            }
         }
     }
 }
