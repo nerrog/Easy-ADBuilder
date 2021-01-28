@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(config));
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -104,7 +105,9 @@
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metroTextBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "config";
+            this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "設定";
             this.Load += new System.EventHandler(this.config_Load);
             this.ResumeLayout(false);

@@ -51,7 +51,7 @@
             this.trop.CustomButton.UseSelectable = true;
             this.trop.CustomButton.Visible = false;
             this.trop.Lines = new string[] {
-        "Trop"};
+        "text"};
             this.trop.Location = new System.Drawing.Point(22, 63);
             this.trop.MaxLength = 32767;
             this.trop.Multiline = true;
@@ -66,7 +66,7 @@
             this.trop.Size = new System.Drawing.Size(770, 302);
             this.trop.Style = MetroFramework.MetroColorStyle.Green;
             this.trop.TabIndex = 0;
-            this.trop.Text = "Trop";
+            this.trop.Text = "text";
             this.trop.UseSelectable = true;
             this.trop.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.trop.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
