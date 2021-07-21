@@ -34,6 +34,7 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // trop
@@ -116,11 +117,22 @@
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(198, 380);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(124, 47);
+            this.metroButton3.TabIndex = 5;
+            this.metroButton3.Text = "アンインストール";
+            this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.metroButton1);
@@ -144,6 +156,7 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton metroButton3;
     }
 }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -98,14 +99,12 @@ namespace Easy_ADBuilder
                 pro.StartInfo.Verb = "RunAs";
                 pro.Start();
 
-                //環境変数pathへ追加
-                pro.StartInfo.FileName = "setx";
-                pro.StartInfo.Arguments = $"/M path \" % path %;{tmp}";
-                pro.StartInfo.CreateNoWindow = true;
-                pro.StartInfo.UseShellExecute = false;
-                pro.StartInfo.RedirectStandardOutput = true;
-
-                pro.Start();
+                //前のコードのやり方では危険なのでこっちの方法で追加する
+                var name = "PATH";
+                var scope = EnvironmentVariableTarget.User; // or User
+                var oldValue = Environment.GetEnvironmentVariable(name, scope);
+                var newValue = oldValue + tmp;
+                Environment.SetEnvironmentVariable(name, newValue, scope);
 
             }
             catch (IOException e)
@@ -206,6 +205,59 @@ namespace Easy_ADBuilder
             if (metroCheckBox1.Checked == false)
             {
                 metroButton1.Enabled = false;
+            }
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            //アンインストール機能
+
+            string tmp_un;
+
+            //configファイルのディレクトリを調べる
+            string conf = $@"{(System.Environment.CurrentDirectory)}\config";
+            if (System.IO.File.Exists(conf))
+            {
+                //configが存在すれば変数に代入する
+                tmp_un = File.ReadAllText(conf);
+            }
+            else
+            {
+                tmp_un = @"C:\adb";
+            }
+            //configが空だと例外が発生するのでここでチェック
+            if (tmp_un == "")
+            {
+                tmp_un = @"C:\adb";
+            }
+            DialogResult result = MessageBox.Show($"コンフィグファイルからインストール先「{tmp_un}」が検出されました。\r\n初期設定から変えて、なおかつディレクトリが違う場合は設定から変更してください",
+            "質問",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Exclamation,
+            MessageBoxDefaultButton.Button2);
+
+            if(result == DialogResult.Yes)
+            {
+                if (Directory.Exists(tmp_un))
+                {
+                    Process.Start("cmd.exe", "/c " + $"rmdir /s/q {tmp_un}");
+                    //環境変数を削除する方法が思いつかない
+                    MessageBox.Show("アンインストールが完了しました",
+                    "情報",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("ディレクトリが存在しません",
+                    "エラー",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                return;
             }
         }
     }
